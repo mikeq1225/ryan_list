@@ -17,17 +17,23 @@ router.get("/categories", (req, res, next) => {
   })
 })
 
-// router.get("/categories", (req, res, next) => {
-//   res.json(going)
-// })
+router.get("/subs/:slug", (req, res, next) => {
+  const slug = `${req.params.slug}`
+  const sql2 = `SELECT listings.title, listings.id, categories.\`name\` 
+  FROM listings 
+  LEFT JOIN categories ON listings.subcat_id = categories.id
+  WHERE categories.slug = ?`
+  conn.query(sql2, [slug], (err, results, fields) => {
+    res.json(results)
+  })
+})
 
-// router.get("/categories", (req, res, next) => {
-//   const sql = `SELECT name
-//   FROM ryans_list.categories
-//   WHERE ISNULL(parent_id)`
-//   conn.query(sql, (err, results, fields) => {
-//     res.json(results)
-//   })
-// })
+router.get("/listing/:id", (req, res, next) => {
+  const id = `${req.params.id}`
+  const sql3 = `SELECT id, title, \`desc\` FROM listings WHERE listings.id = ?`
+  conn.query(sql3, [id], (err, results, fields) => {
+    res.json(results)
+  })
+})
 
 module.exports = router
