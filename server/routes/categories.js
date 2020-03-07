@@ -19,7 +19,7 @@ router.get("/categories", (req, res, next) => {
 
 router.get("/subs/:slug", (req, res, next) => {
   const slug = `${req.params.slug}`
-  const sql2 = `SELECT listings.title, listings.id, categories.\`name\` 
+  const sql2 = `SELECT listings.title, listings.id, categories.\`name\`, listings.subcat_id 
   FROM listings 
   LEFT JOIN categories ON listings.subcat_id = categories.id
   WHERE categories.slug = ?`
@@ -28,9 +28,29 @@ router.get("/subs/:slug", (req, res, next) => {
   })
 })
 
+router.post("/subs/:slug", (req, res, next) => {
+  const id = `${req.params.subcat_id}`
+  const title = `${req.body.title}`
+  const city = `${req.body.city}`
+  const location = `${req.body.location}`
+  const price = `${req.body.price}`
+  sql4 = `INSERT INTO listings(title,subcat_id,\`desc\`, city, location, price)
+  VALUES(?,${id},?,?,?)`
+  conn.query(
+    sql4,
+    [title],
+    [city],
+    [location],
+    [price],
+    (err, results, fields) => {
+      res.json(results)
+    }
+  )
+})
+
 router.get("/listing/:id", (req, res, next) => {
   const id = `${req.params.id}`
-  const sql3 = `SELECT id, title, \`desc\` FROM listings WHERE listings.id = ?`
+  const sql3 = `SELECT * FROM listings WHERE listings.id = ?`
   conn.query(sql3, [id], (err, results, fields) => {
     res.json(results)
   })
