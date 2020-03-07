@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+.homeWrapper {
+  width: 1000px;
+  margin: auto;
+}
+
+.catDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mainCats {
+  min-height: 200px;
+  max-width: 200px;
+  margin: 20px;
+}
+
+.mainCats p {
+  margin: 4px 0px;
+}
+
+a {
+  text-decoration: none;
+}
