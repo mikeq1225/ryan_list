@@ -1,0 +1,11 @@
+.subsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1000px;
+  margin: auto;
+}
+
+.submitDiv {
+  display: flex;
+  flex-direction: column;
+}

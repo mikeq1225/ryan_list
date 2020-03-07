@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDescript } from "../hooks"
 // import { Link } from "react-router-dom"
 // import "../styles/Home.css"
 
 export default props => {
-  const { item } = useDescript()
+  const { item, fetchDescript } = useDescript()
+
+  useEffect(() => {
+    fetchDescript(props.match.params.id)
+  }, [props.match.params])
 
   return (
     <div className="itemWrapper">
