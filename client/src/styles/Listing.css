@@ -1,0 +1,9 @@
+.itemWrapper {
+  width: 1000px;
+  margin: auto;
+}
+
+.itemDiv {
+  display: flex;
+  flex-direction: column;
+}

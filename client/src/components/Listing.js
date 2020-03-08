@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useDescript } from "../hooks"
 // import { Link } from "react-router-dom"
-// import "../styles/Home.css"
+import "../styles/Listing.css"
 
 export default props => {
   const { item, fetchDescript } = useDescript()
@@ -16,7 +16,11 @@ export default props => {
         {item.map(each => (
           <div className="item" key={"each-" + each.id}>
             <p>{each.title}</p>
+            <p>
+              {each.city} ({each.location})
+            </p>
             <p>{each.desc}</p>
+            <p>{each.price}</p>
           </div>
         ))}
       </div>
