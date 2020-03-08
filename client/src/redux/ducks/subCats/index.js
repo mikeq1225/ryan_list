@@ -2,19 +2,15 @@ import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 
 const GET_LISTINGS = "subCat/GET_LISTINGS"
-const POST_LISTING = "subCat/POST_LISTING"
 
 const initialState = {
-  listings: [],
-  form: []
+  listings: []
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_LISTINGS:
       return { ...state, listings: action.payload }
-    case POST_LISTING:
-      return { ...state, form: action.payload }
     default:
       return state
   }
@@ -32,14 +28,11 @@ function getListings(slug) {
   }
 }
 
-function postListing(slug) {
+function postListing(slug, form) {
   return dispatch => {
-    axios.post("/api/subs/" + slug).then(resp => {
-      const data = resp.data
-      dispatch({
-        type: POST_LISTING,
-        payload: data
-      })
+    axios.post("/api/subs/" + slug, form).then(resp => {
+      dispatch(getListings())
+      console.log(form)
     })
   }
 }

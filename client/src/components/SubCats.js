@@ -5,78 +5,92 @@ import "../styles/subCats.css"
 
 export default props => {
   const { list, fetchListings, sendListing } = useListings()
-  const { form, setForm } = useState({
-    title: "",
-    subcat_id: list.subcat_id,
-    city: "",
-    location: "",
-    desc: "",
-    price: ""
-  })
+  const [title, setTitle] = useState("")
+  const [city, setCity] = useState("")
+  const [location, setLocation] = useState("")
+  const [desc, setDesc] = useState("")
+  const [price, setPrice] = useState("")
+  const subCat = list.length > 0 && list[0].subcat_id
+
+  const form = {
+    title: title,
+    subcat_id: subCat,
+    city: city,
+    location: location,
+    desc: desc,
+    price: price
+  }
 
   useEffect(() => {
     fetchListings(props.match.params.slug)
-  }, [props.match.params])
+  }, [props.match.params.slug])
 
-  const handleChange = (e, field) => {
-    setForm({
-      ...form,
-      [field]: e.target.value
-    })
-  }
-  const handleSubmit = () => {
-    // console.log("form", form)
-    sendListing(form)
+  const handleSubmit = e => {
+    console.log(form)
+    // sendListing(form)
   }
 
   return (
     <div className="subsWrapper">
-      <div className="subsDiv">
-        {list.map(each => (
-          <div className="subCats" key={"each-" + each.title}>
-            <Link key={"each" + each.id} to={"/listing/" + each.id}>
-              <p>{each.title}</p>
-            </Link>
-          </div>
-        ))}
+      <div>
+        <h1>{list.length > 0 && list[0].name}</h1>
+        <div className="subsDiv">
+          {list &&
+            list.map(each => (
+              <div className="subCats" key={"each-" + each.title}>
+                <Link key={"each" + each.id} to={"/listing/" + each.id}>
+                  <p className="para">{each.title},</p>
+                </Link>
+                <span>({each.city})</span>
+              </div>
+            ))}
+        </div>
       </div>
-      <div className="submitDiv">
+      <form className="submitDiv">
+        <h2>Submit your post below:</h2>
         <label htmlFor="title">Title</label>
         <input
           id="title"
           type="text"
           placeholder="ex. Horse for sale"
-          onInput={e => handleChange(e, "title")}
+          onChange={e => setTitle(e.target.value)}
+          value={title}
         />
         <label htmlFor="city">City</label>
         <input
           id="city"
           type="text"
           placeholder="ex. Las Vegas"
-          onInput={e => handleChange(e, "city")}
+          onChange={e => setCity(e.target.value)}
+          value={city}
         />
         <label htmlFor="location">Location</label>
         <input
           id="location"
           type="text"
           placeholder="ex. Southwest"
-          onInput={e => handleChange(e, "location")}
+          onChange={e => setLocation(e.target.value)}
+          value={location}
         />
         <label htmlFor="desc">Description</label>
         <textarea
           id="desc"
           placeholder="ex. Beautiful brown and white horse for sale"
-          onChange={e => handleChange(e, "desc")}
+          onChange={e => setDesc(e.target.value)}
+          value={desc}
         ></textarea>
         <label htmlFor="price">Price</label>
         <input
           id="price"
           type="text"
           placeholder="ex. Free"
-          onInput={e => handleChange(e, "price")}
+          onChange={e => setPrice(e.target.value)}
+          value={price}
         />
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
+        <button type="submit" onSubmit={handleSubmit}>
+          Submit
+        </button>
+      </form>
     </div>
   )
 }
