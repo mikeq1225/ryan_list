@@ -1,3 +1,7 @@
+.allSubsPage a {
+  text-decoration: none;
+}
+
 .subsWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5,6 +9,19 @@
   width: 1000px;
   margin: auto;
   padding: 20px;
+}
+
+.homeButton {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.homeButton button {
+  cursor: pointer;
+  padding: 0px 20px;
+  width: 30%;
+  font-size: 1.75em;
 }
 
 .subsWrapper h1 {
@@ -56,6 +73,10 @@
   opacity: 60%;
   font-size: 1.3em;
   padding-left: 10px;
+}
+
+.submitDiv textarea::placeholder {
+  padding-top: 4px;
 }
 
 .submitDiv button {
