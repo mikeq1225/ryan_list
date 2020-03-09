@@ -1,27 +1,84 @@
-.homeWrapper h1 {
-  text-align: center;
+.homeWrapper {
+  display: grid;
+  grid-template-columns: 200px auto 125px;
+  grid-gap: 15px;
+  width: 1000px;
+  margin: 20px auto;
 }
 
-.homeWrapper {
-  width: 1000px;
-  margin: auto;
+.ryanTitle {
+  text-align: center;
+  margin: 0;
+  background-color: rgb(244, 244, 244);
+  color: rgb(0, 26, 229);
+  border-left: 1px solid rgb(204, 204, 204);
+  border-right: 1px solid rgb(204, 204, 204);
+}
+
+.city {
+  background-color: rgb(244, 244, 244);
+  margin: 0px 11px;
+  text-align: center;
+  font-size: 1.75em;
+  padding: 4px 0px;
+  border-top: 1px solid rgb(204, 204, 204);
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.nearby {
+  background-color: rgb(244, 244, 244);
+  margin: 0;
+  color: rgb(0, 26, 229);
+  text-align: center;
+  padding-top: 10px;
+  border-left: 1px solid rgb(204, 204, 204);
+  border-right: 1px solid rgb(204, 204, 204);
+}
+
+.mainCats {
+  margin: 0px 10px;
+}
+
+.mainCats h3 {
+  background-color: rgb(244, 244, 244);
+  color: rgb(0, 26, 229);
+  text-align: center;
+  margin: 15px 0px 5px 0px;
+  padding: 8px 0px;
+  cursor: pointer;
+  border: 5px solid rgb(244, 244, 244);
+  border-top: 1px solid rgb(204, 204, 204);
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.mainCats h3:hover {
+  background-color: white;
+  color: purple;
 }
 
 .catDiv {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 1500px;
+}
+
+.listingDiv {
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
-.mainCats {
-  min-height: 200px;
-  max-width: 200px;
-  margin: 20px;
-}
-
-.mainCats p {
-  margin: 4px 0px;
-}
-
-a {
+.listingDiv a {
   text-decoration: none;
+}
+
+.listingDiv a:hover {
+  color: purple;
+  background-color: rgb(244, 244, 244);
+}
+
+.listings {
+  margin: 1px 0px;
+  border-bottom: 1px solid rgb(234, 234, 234);
 }
