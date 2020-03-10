@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useListings } from "../hooks"
 import { Link } from "react-router-dom"
 import "../styles/subCats.css"
+import moment from "moment"
 
 export default props => {
   const { list, fetchListings, sendListing } = useListings()
@@ -10,24 +11,19 @@ export default props => {
   const [location, setLocation] = useState("")
   const [desc, setDesc] = useState("")
   const [price, setPrice] = useState("")
-  const subCat = list.length > 0 && list[0].subcat_id
-
-  const form = {
-    title: title,
-    subcat_id: subCat,
-    city: city,
-    location: location,
-    desc: desc,
-    price: price
-  }
 
   useEffect(() => {
     fetchListings(props.match.params.slug)
-  }, [props.match.params.slug])
+  }, [props.match.params])
 
-  const handleSubmit = e => {
-    console.log(form)
-    // sendListing(form)
+  function handleSubmit(e) {
+    e.preventDefault()
+    sendListing(props.match.params.slug, title, city, location, desc, price)
+    setTitle("")
+    setCity("")
+    setLocation("")
+    setDesc("")
+    setPrice("")
   }
 
   return (
@@ -46,11 +42,14 @@ export default props => {
                     <p className="para">{each.title},</p>
                   </Link>
                   <span>({each.city})</span>
+                  <span className="timeStamp">
+                    {moment(each.time_stamp).fromNow()}
+                  </span>
                 </div>
               ))}
           </div>
         </div>
-        <form className="submitDiv">
+        <form onSubmit={handleSubmit} className="submitDiv">
           <h2>Submit your post below:</h2>
           <label htmlFor="title">Title</label>
           <input
@@ -91,9 +90,7 @@ export default props => {
             onChange={e => setPrice(e.target.value)}
             value={price}
           />
-          <button type="submit" onSubmit={handleSubmit}>
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>

@@ -44,6 +44,12 @@
   font-size: 0.9em;
 }
 
+span.timeStamp {
+  color: blue;
+  opacity: 60%;
+  border-bottom: 1px dotted blue;
+}
+
 .submitDiv {
   display: flex;
   flex-direction: column;
@@ -61,18 +67,20 @@
 
 .submitDiv input,
 .submitDiv textarea {
-  min-height: 3em;
+  min-height: 2em;
   border-radius: 4px;
   outline: none;
   border: 1px solid grey;
+  font-size: 20px;
+  color: grey;
+  padding-left: 10px;
 }
 
 .submitDiv input::placeholder,
 .submitDiv textarea::placeholder {
   color: blue;
   opacity: 60%;
-  font-size: 1.3em;
-  padding-left: 10px;
+  font-size: 1em;
 }
 
 .submitDiv textarea::placeholder {
@@ -82,4 +90,5 @@
 .submitDiv button {
   font-size: 2em;
   margin: 20px 40px;
+  cursor: pointer;
 }
