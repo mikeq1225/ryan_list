@@ -60,13 +60,13 @@ span.timeStamp {
   margin: 0px 0px 25px 0px;
 }
 
-.submitDiv label {
+label {
   font-size: 1.4em;
   margin: 10px 0px 0px 0px;
 }
 
-.submitDiv input,
-.submitDiv textarea {
+input,
+textarea {
   min-height: 2em;
   border-radius: 4px;
   outline: none;
@@ -76,8 +76,8 @@ span.timeStamp {
   padding-left: 10px;
 }
 
-.submitDiv input::placeholder,
-.submitDiv textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: blue;
   opacity: 60%;
   font-size: 1em;
@@ -91,4 +91,12 @@ span.timeStamp {
   font-size: 2em;
   margin: 20px 40px;
   cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.errorBox {
+  border: 2px solid red;
 }

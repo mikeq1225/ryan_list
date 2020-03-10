@@ -3,14 +3,19 @@ import { useListings } from "../hooks"
 import { Link } from "react-router-dom"
 import "../styles/subCats.css"
 import moment from "moment"
+import validator from "validator"
 
 export default props => {
   const { list, fetchListings, sendListing } = useListings()
   const [title, setTitle] = useState("")
+  const [titleError, setTitleError] = useState("")
   const [city, setCity] = useState("")
+  const [cityError, setCityError] = useState("")
   const [location, setLocation] = useState("")
   const [desc, setDesc] = useState("")
+  const [descError, setDescError] = useState("")
   const [price, setPrice] = useState("")
+  const [priceError, setPriceError] = useState("")
 
   useEffect(() => {
     fetchListings(props.match.params.slug)
@@ -18,12 +23,44 @@ export default props => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    sendListing(props.match.params.slug, title, city, location, desc, price)
-    setTitle("")
-    setCity("")
-    setLocation("")
-    setDesc("")
-    setPrice("")
+    let valid = true
+
+    if (!validator.isAlpha(title, "en-US")) {
+      valid = false
+      setTitleError(` -- Can't be blank. Please enter a title.`)
+    } else {
+      setTitleError("")
+    }
+
+    // if (!validator.isAlpha(city, "en-US")) {
+    //   valid = false
+    //   setCityError(` -- Can't be blank. Please enter a city.`)
+    // } else {
+    //   setCityError("")
+    // }
+
+    // if (!validator.isAlphanumeric(desc, "en-US")) {
+    //   valid = false
+    //   setDescError(` -- Enter a description.`)
+    // } else {
+    //   setDescError("")
+    // }
+
+    if (!validator.isAlphanumeric(price, "en-US")) {
+      valid = false
+      setPriceError(` -- Enter a price or use 'free'.`)
+    } else {
+      setPriceError("")
+    }
+
+    if (valid) {
+      sendListing(props.match.params.slug, title, city, location, desc, price)
+      setTitle("")
+      setCity("")
+      setLocation("")
+      setDesc("")
+      setPrice("")
+    }
   }
 
   return (
@@ -51,19 +88,25 @@ export default props => {
         </div>
         <form onSubmit={handleSubmit} className="submitDiv">
           <h2>Submit your post below:</h2>
-          <label htmlFor="title">Title</label>
+          <label className={titleError ? "error" : ""} htmlFor="title">
+            Title {titleError && titleError}
+          </label>
           <input
             id="title"
             type="text"
             placeholder="ex. Horse for sale"
+            className={titleError ? "errorBox" : ""}
             onChange={e => setTitle(e.target.value)}
             value={title}
           />
-          <label htmlFor="city">City</label>
+          <label className={cityError ? "error" : ""} htmlFor="city">
+            City {cityError && cityError}
+          </label>
           <input
             id="city"
             type="text"
             placeholder="ex. Las Vegas"
+            className={cityError ? "errorBox" : ""}
             onChange={e => setCity(e.target.value)}
             value={city}
           />
@@ -75,18 +118,24 @@ export default props => {
             onChange={e => setLocation(e.target.value)}
             value={location}
           />
-          <label htmlFor="desc">Description</label>
+          <label className={descError ? "error" : ""} htmlFor="desc">
+            Description {descError && descError}
+          </label>
           <textarea
             id="desc"
             placeholder="ex. Beautiful brown and white horse for sale"
+            className={descError ? "errorBox" : ""}
             onChange={e => setDesc(e.target.value)}
             value={desc}
           ></textarea>
-          <label htmlFor="price">Price</label>
+          <label className={priceError ? "error" : ""} htmlFor="price">
+            Price {priceError && priceError}
+          </label>
           <input
             id="price"
             type="text"
             placeholder="ex. Free"
+            className={priceError ? "errorBox" : ""}
             onChange={e => setPrice(e.target.value)}
             value={price}
           />
