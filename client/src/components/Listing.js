@@ -14,7 +14,7 @@ export default props => {
   return (
     <div className="listingPage">
       <Link to={"/"} className="homeButton">
-        <button>Home</button>
+        <button>Ryanslist</button>
       </Link>
       <div className="itemWrapper">
         <div className="itemDiv">
