@@ -26,21 +26,35 @@
 .itemDiv {
   display: flex;
   flex-direction: column;
+  width: 75%;
+}
+
+.postDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+p.timeStamp {
+  color: blue;
+  opacity: 60%;
+  border-bottom: 1px dotted blue;
+  margin: 15px 0px 0px 0px;
 }
 
 .itemTitle {
   font-weight: bold;
   font-size: 1.5em;
-}
-
-.item p:nth-child(2),
-.item p:nth-child(4) {
-  margin: 15px 0px 0px 0px;
-  font-size: 1.2em;
+  margin: 0px 0px 24px 0px;
 }
 
 .item p:nth-child(3),
 .item p:nth-child(5) {
+  margin: 15px 0px 0px 0px;
+  font-size: 1.2em;
+}
+
+.item p:nth-child(4),
+.item p:nth-child(6) {
   margin: 0;
   font-weight: 300;
 }
