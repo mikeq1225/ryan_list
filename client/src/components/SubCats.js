@@ -25,28 +25,28 @@ export default props => {
     e.preventDefault()
     let valid = true
 
-    if (!validator.isAlpha(title, "en-US")) {
+    if (validator.isEmpty(title)) {
       valid = false
       setTitleError(` -- Can't be blank. Please enter a title.`)
     } else {
       setTitleError("")
     }
 
-    // if (!validator.isAlpha(city, "en-US")) {
-    //   valid = false
-    //   setCityError(` -- Can't be blank. Please enter a city.`)
-    // } else {
-    //   setCityError("")
-    // }
+    if (validator.isEmpty(city)) {
+      valid = false
+      setCityError(` -- Can't be blank. Please enter a city.`)
+    } else {
+      setCityError("")
+    }
 
-    // if (!validator.isAlphanumeric(desc, "en-US")) {
-    //   valid = false
-    //   setDescError(` -- Enter a description.`)
-    // } else {
-    //   setDescError("")
-    // }
+    if (validator.isEmpty(desc)) {
+      valid = false
+      setDescError(` -- Enter a description.`)
+    } else {
+      setDescError("")
+    }
 
-    if (!validator.isAlphanumeric(price, "en-US")) {
+    if (validator.isEmpty(price)) {
       valid = false
       setPriceError(` -- Enter a price or use 'free'.`)
     } else {
@@ -66,7 +66,7 @@ export default props => {
   return (
     <div className="allSubsPage">
       <Link to={"/"} className="homeButton">
-        <button>Home</button>
+        <button>Ryanslist</button>
       </Link>
       <div className="subsWrapper">
         <div>

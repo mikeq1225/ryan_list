@@ -1,9 +1,0 @@
-[{"id":1, "title":"juggling", "subcat_id":6, "desc":"Juggling lessons at your home from a seasoned professional", "city":"Las Vegas", "location":"downtown", "price":"$20/hour", "map":""},
- {"id":2, "title":"dancing", "subcat_id":6, "desc":"Group Tango lessons", "city":"Las Vegas", "location":"Summerlin South", "price":"free", "map":""},
- {"id":3, "title":"skating", "subcat_id":6, "desc":"rollerhockey in the park", "city":"Henderson", "location":"Water Street area", "price":"free", "map":""},
- {"id":4, "title":"hockey", "subcat_id":9, "desc":"I will come to your house during a Knights game and explain the rules of hockey to you", "city":"Las Vegas", "location":"Anywhere", "price":"$10.00", "map":""},
- {"id":5, "title":"coding", "subcat_id":9, "desc":"learn how to write Javascript", "city":"North Las Vegas", "location":"Aliante", "price":"$100.00", "map":""},
- {"id":6, "title":"typing", "subcat_id":9, "desc":"Learn how ta type. I's the best typewriter person around", "city":"Las Vegas", "location":"East side", "price":"$9.99", "map":""},
- {"id":7, "title":"rummage sale", "subcat_id":10, "desc":"Large community wide rummage sale.  Over 50 families partcipating.", "city":"Las Vegas", "location":"Centennial Hills", "price":"free", "map":""},
- {"id":8, "title":"parade", "subcat_id":10, "desc":"Annual Christmas in July Parade will be on June 30th.  Come enjoy the festivities", "city":"Henderson", "location":"downtown", "price":"free", "map":""},
- {"id":9, "title":"dog walk", "subcat_id":10, "desc":"Community wide dog walking event to raise awareness of doggy depression", "city":"Las Vegas", "location":"Fremont Street", "price":"free", "map":""}]
