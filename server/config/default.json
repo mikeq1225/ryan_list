@@ -1,8 +1,8 @@
 {
-  "db": {
-    "host": "localhost",
-    "user": "ryans_list",
-    "password": ".bvB!\"(?K(YM2W\\L",
-    "database": "ryans_list"
-  }
+	"db": {
+		"host": "localhost",
+		"user": "ryan",
+		"password": "ZCYcJVwfm@bPJUG9kM!yHhrr#fhDC2KtN%XJq5vY",
+		"database": "ryansList"
+	}
 }
