@@ -9,6 +9,10 @@ app.use(express.json())
 
 app.use("/api", categoriesRoutes)
 
+app.get("*", function (req, res, next) {
+	res.sendFile(__dirname + "/public/index.html")
+})
+
 app.listen(port, () => {
-  console.log(`LISTENING ON PORT ${port}`)
+	console.log(`LISTENING ON PORT ${port}`)
 })
