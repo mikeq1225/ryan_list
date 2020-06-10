@@ -11,16 +11,12 @@ app.use(express.json())
 
 app.use("/api", categoriesRoutes)
 
-app.get("*", function (req, res, next) {
-	res.sendFile(__dirname + "/public/index.html")
+// The "catchall" handler: for any request that doesn't match one above, send back React's index.html file.
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname + "/client/build/index.html"))
 })
 
 const port = process.env.PORT || 3001
 app.listen(port, () => {
 	console.log(`LISTENING ON PORT ${port}`)
 })
-
-// const port = 3001
-// app.listen(port, () => {
-// 	console.log(`LISTENING ON PORT ${port}`)
-// })
