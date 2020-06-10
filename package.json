@@ -17,6 +17,7 @@
 	"dependencies": {
 		"concurrently": "^5.1.0",
 		"global": "^4.4.0",
+		"react": "^16.13.1",
 		"react-scripts": "^3.4.1"
 	},
 	"boilerplate": {
