@@ -1,109 +1,109 @@
 .allSubsPage a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .subsWrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-  width: 1000px;
-  margin: auto;
-  padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 15px;
+	width: 1000px;
+	margin: auto;
+	padding: 20px;
 }
 
 .homeButton {
-  margin: auto;
-  display: flex;
-  justify-content: center;
+	margin: auto;
+	display: flex;
+	justify-content: center;
 }
 
 .homeButton button {
-  border: none;
-  color: blue;
-  cursor: pointer;
-  padding: 0px 20px;
-  width: 30%;
-  font-size: 1.75em;
+	border: none;
+	color: blue;
+	cursor: pointer;
+	padding: 0px 20px;
+	width: 30%;
+	font-size: 1.75em;
 }
 
 .homeButton button:hover {
-  color: purple;
-  text-decoration: underline;
+	color: purple;
+	text-decoration: underline;
 }
 
 .subsWrapper h1 {
-  text-transform: capitalize;
-  border-bottom: 2px solid black;
+	text-transform: capitalize;
+	border-bottom: 2px solid black;
 }
 
 .subCats {
-  display: flex;
-  align-items: baseline;
+	display: flex;
+	align-items: baseline;
 }
 
 .para {
-  font-size: 1.5em;
-  margin: 3px 0px;
+	font-size: 1.5em;
+	margin: 3px 0px;
 }
 
 .subCats span {
-  margin-left: 10px;
-  font-size: 0.9em;
+	margin-left: 10px;
+	font-size: 0.9em;
 }
 
 span.timeStamp {
-  color: blue;
-  opacity: 60%;
-  border-bottom: 1px dotted blue;
+	color: blue;
+	opacity: 60%;
+	border-bottom: 1px dotted blue;
 }
 
 .submitDiv {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .submitDiv h2 {
-  text-align: center;
-  margin: 0px 0px 25px 0px;
+	text-align: center;
+	margin: 0px 0px 25px 0px;
 }
 
 label {
-  font-size: 1.4em;
-  margin: 10px 0px 0px 0px;
+	font-size: 1.4em;
+	margin: 10px 0px 0px 0px;
 }
 
 input,
 textarea {
-  min-height: 2em;
-  border-radius: 4px;
-  outline: none;
-  border: 1px solid grey;
-  font-size: 20px;
-  color: grey;
-  padding-left: 10px;
+	min-height: 2em;
+	border-radius: 4px;
+	outline: none;
+	border: 1px solid grey;
+	font-size: 20px;
+	color: grey;
+	padding-left: 10px;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: blue;
-  opacity: 60%;
-  font-size: 1em;
+	color: blue;
+	opacity: 60%;
+	font-size: 0.75em;
 }
 
 .submitDiv textarea::placeholder {
-  padding-top: 4px;
+	padding-top: 4px;
 }
 
 .submitDiv button {
-  font-size: 2em;
-  margin: 20px 40px;
-  cursor: pointer;
+	font-size: 2em;
+	margin: 20px 40px;
+	cursor: pointer;
 }
 
 .error {
-  color: red;
+	color: red;
 }
 
 .errorBox {
-  border: 2px solid red;
+	border: 2px solid red;
 }
