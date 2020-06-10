@@ -15,15 +15,18 @@
 		"url": "https://github.com/PC-Fullstack-Spring-2020/boilerpolate/issues"
 	},
 	"dependencies": {
+		"axios": "^0.19.2",
 		"concurrently": "^5.1.0",
 		"global": "^4.4.0",
+		"moment": "^2.26.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-redux": "^7.2.0",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "^3.4.1",
 		"redux": "^4.0.5",
-		"redux-thunk": "^2.3.0"
+		"redux-thunk": "^2.3.0",
+		"validator": "^13.1.0"
 	},
 	"boilerplate": {
 		"name": "boilerplate",
