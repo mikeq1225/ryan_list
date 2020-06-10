@@ -1,5 +1,7 @@
 const mysql = require("mysql")
 const config = require("config")
+
+// for accessing aws database
 const pool = mysql.createPool({
 	connectionLimit: 10,
 	host: config.get("awsDB.host"),
@@ -7,5 +9,14 @@ const pool = mysql.createPool({
 	password: config.get("awsDB.password"),
 	database: config.get("awsDB.database"),
 })
+
+// for accessing local database
+// const pool = mysql.createPool({
+// 	connectionLimit: 10,
+// 	host: config.get("db.host"),
+// 	user: config.get("db.user"),
+// 	password: config.get("db.password"),
+// 	database: config.get("db.database"),
+// })
 
 module.exports = pool
