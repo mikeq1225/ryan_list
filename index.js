@@ -1,6 +1,6 @@
 const express = require("express")
 const path = require("path")
-const categoriesRoutes = require("./routes/categories")
+const categoriesRoutes = require("./server/routes/categories")
 const app = express()
 
 // Serve static files from the React app
