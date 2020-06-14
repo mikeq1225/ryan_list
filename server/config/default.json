@@ -1,0 +1,15 @@
+{
+	"db": {
+		"host": "localhost",
+		"user": "ryan",
+		"password": "ZCYcJVwfm@bPJUG9kM!yHhrr#fhDC2KtN%XJq5vY",
+		"database": "ryansList"
+	},
+	"awsDB": {
+		"host": "ryanlistdb.c3jbgd9czvwe.us-east-2.rds.amazonaws.com",
+		"user": "ryan",
+		"password": "^E86kLM*Xx?4w9YfNcEh!AhKMPSWeBfRqZP6@tGK",
+		"database": "ryansList"
+	},
+	"secret": ""
+}
