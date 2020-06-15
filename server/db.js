@@ -4,10 +4,10 @@ const config = require("config")
 // for pushing to Heroku to use its config
 const pool = mysql.createPool({
 	connectionLimit: 10,
-	host: process.env.host,
-	user: process.env.user,
-	password: process.env.password,
-	database: process.env.database,
+	host: process.env.host || config.get("awsDB.host"),
+	user: process.env.user || config.get("awsDB.user"),
+	password: process.env.password || config.get("awsDB.password"),
+	database: process.env.database || config.get("awsDB.database"),
 })
 
 // for accessing aws database in dev mode
