@@ -10,7 +10,7 @@ const pool = mysql.createPool({
 	database: process.env.database,
 })
 
-// for accessing aws database
+// for accessing aws database in dev mode
 // const pool = mysql.createPool({
 // 	connectionLimit: 10,
 // 	host: config.get("awsDB.host"),
